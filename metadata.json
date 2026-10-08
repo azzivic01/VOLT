@@ -1,0 +1,6 @@
+{
+  "name": "VOLT — Estúdio de Treino Funcional",
+  "description": "Landing page de alta energia para estúdio de treino funcional e condicionamento físico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

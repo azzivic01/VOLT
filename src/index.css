@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Barlow Condensed", sans-serif;
+  --font-sans: "Barlow", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+:root {
+  /* Cores obrigatórias do tema */
+  --tema-color-bg: #0B0F0D;
+  --tema-color-surface: #131A16;
+  --tema-color-border: #26302A;
+  --tema-color-text: #F4F7F2;
+  --tema-color-text-muted: #9AA59D;
+  --tema-color-accent: #C6F432;
+  --tema-color-accent-ink: #C6F432;
+  --tema-color-on-accent: #0B0F0D;
+
+  /* Fontes obrigatórias do tema */
+  --tema-font-display: "Barlow Condensed", sans-serif;
+  --tema-font-body: "Barlow", sans-serif;
+  --tema-font-label: "Barlow Condensed", sans-serif;
+
+  /* Forma */
+  --tema-radius: 4px;
+  --tema-radius-lg: 10px;
+
+  /* Movimento */
+  --motion-duration-fast: 150ms;
+  --motion-duration-base: 300ms;
+  --motion-duration-slow: 700ms;
+  --motion-duration-cinematic: 1000ms;
+  --motion-ease-base: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-stagger: 80ms;
+}
+
+/* Base styles referencing theme variables */
+body {
+  background-color: var(--tema-color-bg);
+  color: var(--tema-color-text);
+  font-family: var(--tema-font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--tema-font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Custom industrial aesthetic helpers */
+.font-display {
+  font-family: var(--tema-font-display);
+}
+
+.font-body {
+  font-family: var(--tema-font-body);
+}
+
+.font-label {
+  font-family: var(--tema-font-label);
+}
+
+.clip-corner-tr {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+.clip-corner-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Outline text style for marquee signature */
+.text-stroke-accent {
+  -webkit-text-stroke: 1.5px var(--tema-color-accent);
+  color: transparent;
+}
+
+.text-stroke-text {
+  -webkit-text-stroke: 1.5px var(--tema-color-text);
+  color: transparent;
+}
+
+/* Accessible focus ring using theme variables */
+:focus-visible {
+  outline: 2px solid var(--tema-color-accent-ink);
+  outline-offset: 3px;
+}
